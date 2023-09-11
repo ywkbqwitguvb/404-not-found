@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+  }
+ 
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; 
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+  .button{
+    background-color: black;
+    color: bisque;
+  }
+
+  .footer{
+    text-align: center;
+    padding-top: 20vh;
+  }
