@@ -1,32 +1,461 @@
-* {
-    box-sizing: border-box;
-  }
- 
-  .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; 
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
-  .button{
-    background-color: black;
-    color: bisque;
-  }
+/* General Styles */
+.h1{
+    color: aqua;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
 
-  .footer{
+header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-brand span {
+    font-size: 1.5em;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+}
+
+nav ul li a.active {
+    background-color: #ddd;
+    border-radius: 4px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.video-banner {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
     text-align: center;
-    padding-top: 20vh;
-  }
+}
+
+.banner-content h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.banner-content p {
+    font-size: 1.2em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav.active {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+
+
+/* General Styles */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+}
+
+.allcolumns {
+    flex: 1;
+    min-width: 250px; /* Minimum width for each column */
+    max-width: 30%;   /* Maximum width for each column */
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+}
+
+.responsive-img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    max-width: 80px; /* Set a max width for the images */
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .allcolumns {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+
+/* General Styles */
+.ith {
+    padding: 20px;
+    color: #13a9b7; /* Optional: for background color */
+}
+
+.sec {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+}
+
+.allcolumns {
+    flex: 1;
+    min-width: 250px; /* Minimum width for each column */
+    max-width: 30%;   /* Maximum width for each column */
+    box-sizing: border-box;
+    padding: 15px;
+    text-align: center;
+   color: #13a9b7; /* Optional: background color for each column */
+    border: 1px solid #13a9b7; /* Optional: border for each column */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+h3, h4 {
+    margin: 10px 0;
+    color: #333;
+}
+
+p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .allcolumns {
+        max-width: 100%;
+        margin-bottom: 20px; /* Optional: spacing between rows on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h3 {
+        font-size: 1.2em;
+    }
+
+    h4 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+}
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Column Styles */
+.column {
+    flex: 1;
+    min-width: 300px; /* Adjust as needed */
+}
+
+.image-column img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-column h1 {
+    margin-top: 50px;
+    margin-bottom: 16px;
+}
+
+.text-column p {
+    line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.banner-text h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+.banner-text p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+
+
+
+/* footer */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    }
+    
+    .social-icons {
+    text-align: center;
+    margin-top: 20px;
+    }
+    
+    .social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+    }
+    
+    .social-icon:hover {
+    color: #007bff;
+    }
+    
+    .church-details {
+    margin-top: 30px;
+    text-align: center;
+   
+    }
+    
+
+/* Reset some default browser styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling the container */
+.social-media {
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    align-items: center;     /* Center the links vertically */
+    padding: 30px;
+}
+
+/* Styling each link */
+.social-link {
+    margin: 0 10px; /* Space out the icons */
+    display: flex;
+    align-items: center;
+}
+
+.social-link img {
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+/* Optional: Add a hover effect */
+.social-link:hover img {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .social-link img {
+        width: 50px; /* Smaller icon size on small screens */
+        height: 50px; /* Smaller icon size on small screens */
+        
+    }
+}
+
+@media (max-width: 400px) {
+    .social-media {
+        flex-direction: row; /* Stack icons vertically on very small screens */
+        align-items: flex-start; /* Align to the start for better appearance */
+    }
+
+    .social-link {
+        margin: 5px 0; /* Vertical spacing between icons */
+    }
+}
+
+
+
+/* Reset margin and padding */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
+    border: 150px solid darkgray; /* Adjust border width and color as needed */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+}
+
+/* Optional: Add styles for responsive design if necessary */
+@media (max-width: 768px) {
+    .banner-container {
+        border-width: 3px; /* Adjust border width for smaller screens */
+    }
+}
